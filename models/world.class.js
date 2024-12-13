@@ -1,36 +1,34 @@
 class World {
     character = new Character();
-    enemies = [
-        new Enemie(),
-        new Enemie(),
-        new Enemie(),
-    ];
-    lights = [
-        new Light()
-    ];
-    backgroundObjects = [
-        new BackgroundObject('../img/3. Background/Layers/5. Water/D1.png', 0, 0, 480),
-        new BackgroundObject('../img/3. Background/Layers/4.Fondo 2/D1.png', 0, 200, 200),
-        new BackgroundObject('../img/3. Background/Layers/3.Fondo 1/D1.png', 0, 0, 480),
-        new BackgroundObject('../img/3. Background/Layers/2. Floor/D1.png', 0, 0, 480),
-       
-    ]
+    level = level1;
     canvas;
     ctx;
+    keyboard;
+    camera_x = 150;
 
-    constructor(canvas) {
+    constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
+        this.keyboard = keyboard;
         this.draw();
+        this.setWorld();
+    }
+
+    setWorld() {
+        this.character.world = this;
     }
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.addObjectsToMap(this.backgroundObjects);
-        this.addObjectsToMap(this.lights);
-        this.addToMap(this.character)
-        this.addObjectsToMap(this.enemies);
-       
+        this.ctx.translate(this.camera_x, 0);
+        this.addObjectsToMap(this.level.backgroundObjects);
+
+        this.addObjectsToMap(this.level.lights);
+        this.addToMap(this.character);
+        this.addToMap(this.level.endboss);
+
+        this.addObjectsToMap(this.level.enemies);
+        this.ctx.translate(-this.camera_x, 0);
 
         //draw() wird immer wieder aufgerufen
         self = this;
@@ -46,7 +44,18 @@ class World {
     }
 
     addToMap(movableObject) {
+        if(movableObject.otherDirection) {
+            this.ctx.save();
+            this.ctx.translate(movableObject.width, 0);
+            this.ctx.scale(-1, 1);
+            movableObject.x = movableObject.x * -1;
+        }
         this.ctx.drawImage(movableObject.img, movableObject.x, movableObject.y, movableObject.width, movableObject.height);
+        if (movableObject.otherDirection) {
+            movableObject.x = movableObject.x * -1;
+
+            this.ctx.restore();
+        }
     }
     
 }

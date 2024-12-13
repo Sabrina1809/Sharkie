@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/1.png" type="image/x-icon">
     <title>Sharkie</title>
     <script src="./models/movable-object.class.js" defer></script>
     <script src="./models/character.class.js" defer></script>
@@ -11,6 +12,11 @@
     <script src="./models/world.class.js" defer></script>
     <script src="./models/light.class.js" defer></script>
     <script src="./models/background-object.class.js" defer></script>
+    <script src="./models/keyboard.class.js" defer></script>
+    <script src="./models/endboss.class.js" defer></script>
+
+    <script src="./models/level.class.js" defer></script>
+    <script src="./levels/level1.js" defer></script>
     <script src="./js/game.js" defer></script>
 </head>
 <body onload="init()">
@@ -19,6 +25,17 @@
 
     </canvas>
     
-   
+   <!--Sound Effect by <a href="https://pixabay.com/users/jarasnat-43633414/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=235477">JARASNAT ANUJAPAD</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=235477">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=80537">freesound_community</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=80537">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=43635">freesound_community</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=43635">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/de/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=23220">freesound_community</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=23220">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/de/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=89059">freesound_community</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=89059">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/de/users/floraphonic-38928062/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=169074">floraphonic</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=169074">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/de/users/floraphonic-38928062/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=169075">floraphonic</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=169075">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/de/users/floraphonic-38928062/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=169076">floraphonic</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=169076">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/de/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=106412">freesound_community</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=106412">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/de/users/ribhavagrawal-39286533/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=230559">Ribhav Agrawal</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=230559">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/de/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=101167">freesound_community</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=101167">Pixabay</a>-->
+   <!--Sound Effect by <a href="https://pixabay.com/de/users/floraphonic-38928062/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=169075">floraphonic</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=169075">Pixabay</a>-->
 </body>
 </html>
